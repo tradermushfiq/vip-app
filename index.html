@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TWM Trading Courses</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    .course {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .course h3 {
+      margin: 0 0 10px 0;
+    }
+    .course p {
+      margin: 5px 0;
+    }
+    .btn {
+      background: #007bff;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background: #0056b3;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      background: #28a745;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #218838;
+    }
+    .telegram-link {
+      text-align: center;
+      margin-top: 25px;
+      display: none;
+    }
+    .payment-instructions {
+      background: #fff8dc;
+      padding: 15px;
+      border: 1px dashed #cc9a00;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📈 TWM Trading Courses</h1>
+    <p>Buy Courses & Join Our VIP Telegram Group</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Course List -->
+    <div class="course">
+      <h3>Beginner Trading Course</h3>
+      <p>Price: ৳999</p>
+    </div>
+
+    <div class="course">
+      <h3>Advanced Signals Mastery</h3>
+      <p>Price: ৳1499</p>
+    </div>
+
+    <!-- Payment Instructions -->
+    <div class="payment-instructions">
+      <strong>📢 Payment Instructions:</strong><br>
+      ➤ Send money to: <br>
+      📱 Nagad: <strong>01315069941</strong> <br>
+      📱 Upay: <strong>01315069941</strong> <br><br>
+      ✅ After sending money, please enter the <strong>Transaction ID</strong> in the form below to confirm your registration.
+    </div>
+
+    <!-- Registration Form -->
+    <form id="vipForm">
+      <h2>VIP Group Registration</h2>
+      <input type="text" id="name" placeholder="Your Full Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <input type="text" id="telegram" placeholder="Telegram Username" required />
+      <input type="text" id="transaction" placeholder="Payment Transaction ID" required />
+      <textarea id="message" rows="3" placeholder="Write any note (optional)"></textarea>
+      <button type="submit">Submit & Confirm</button>
+    </form>
+
+    <!-- Telegram Group Join (hidden until after payment) -->
+    <div class="telegram-link" id="telegramLink">
+      <h3>🎉 Registration Successful!</h3>
+      <p>Click the button below to join our VIP Telegram group:</p>
+      <a href="https://t.me/+qYhP1iFpULBjZjdl" class="btn" target="_blank">Join VIP Telegram Group</a>
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById("vipForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const telegram = document.getElementById("telegram").value;
+      const transaction = document.getElementById("transaction").value;
+
+      if (name && email && telegram && transaction) {
+        alert("✅ Thank you " + name + "! Your registration is submitted.\n\nPlease join the VIP group now.");
+        document.getElementById("vipForm").reset();
+        document.getElementById("telegramLink").style.display = "block";
+      } else {
+        alert("❌ Please fill in all required fields.");
+      }
+    });
+  </script>
+
+</body>
+</html>
